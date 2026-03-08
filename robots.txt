@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://gps.bookgadi.com/sitemap.xml
