@@ -43,7 +43,9 @@
         .hero-text { max-width:500px; flex: 1; }
         .hero-text h1 { font-size: 32px; margin-bottom: 15px; line-height: 1.2; }
         .hero-text span { color:#00468b; }
-        .hero img { width: 100%; max-width: 300px; margin: 0 auto; display: block; }
+        
+        /* Image 5px gap fix */
+        .hero img { width: 100%; max-width: 290px; margin: 5px; display: block; }
         
         .btn1, .btn2 { padding:12px 24px; border-radius:30px; text-decoration:none; font-weight:600; display:inline-flex; align-items:center; gap:8px; margin-top: 15px; font-size: 14px; }
         .btn1 { background:#00468b; color:white; }
@@ -82,7 +84,7 @@
 <nav class="navbar">
     <div class="logo"><i class="fas fa-map-marker-alt"></i> TraqCare</div>
     <div class="hamburger"><i class="fas fa-bars"></i></div>
-    <ul class="menu">
+    <ul class="menu" id="menu">
         <li><a href="#">Home</a></li>
         <li><a href="#products">Products</a></li>
         <li><a href="#app">App</a></li>
@@ -132,7 +134,14 @@
 <script>
     const hamburger = document.querySelector(".hamburger");
     const menu = document.querySelector(".menu");
+    const menuLinks = document.querySelectorAll(".menu a");
+
     hamburger.onclick = () => { menu.classList.toggle("active"); }
+
+    // Close menu when a link is clicked
+    menuLinks.forEach(link => {
+        link.onclick = () => { menu.classList.remove("active"); }
+    });
 </script>
 
 </body>
